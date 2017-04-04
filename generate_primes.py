@@ -2,18 +2,18 @@ import numbers
 import decimal
 def primes_generator(n):
     primes=[2]
-    if isinstance(n,numbers.Number):
+    if type(n)==int:
         if n>1:                
             for i in range(2,n+1):           
                 if i%2==1:
                     primes.append(i)
-            return set(primes)
+            return primes
         else:
             return "Not A Prime Number"
     elif type(n)==str:
         return 'Not A Prime Number'
     
     elif type(n)==list:
-        return 'Not A Prime Number'
+        return 'Not A prime Number'
 
-print primes_generator("5")
+#print primes_generator(19.9)
