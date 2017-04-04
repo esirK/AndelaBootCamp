@@ -9,7 +9,7 @@ class TestPrimeNumbers(unittest.TestCase):
         self.assertEqual(primes_generator('five'),'Not A Prime Number')
 
     def test_not_negative(self):
-        self.assertEqual(primes_generator(-5),'A is Non Negative')
+        self.assertEqual(primes_generator(-5),'Not A Prime Number')
 
     def test_minimum_prime_number(self):
         self.assertEqual(primes_generator(1),'Not A Prime Number')
