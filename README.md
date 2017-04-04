@@ -6,7 +6,7 @@ Day Two.
 
 1.data_types
 
-function that takes one argument,
+Function that takes one argument,
 Compares and return results, based on the argument supplied to the function.
 e.g
 For strings, return its length.
