@@ -4,7 +4,8 @@ A Prime Number Generator from 0 to n with asymptotic analysis
 
 Day Two.
 
-1.data_types.
+1.data_types
+
 function that takes one argument,
 Compares and return results, based on the argument supplied to the function.
 e.g
