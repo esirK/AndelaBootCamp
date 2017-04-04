@@ -1,38 +1,61 @@
-class Employee:
+class Employee(object):
+    raise_saraly_by=1.04
     numberOfEmployee=0
-    basic_salary=5000
-
-    def __init__(self,name):
-        self.name=name
+    def __init__(self,firstName,lastName,pay):
+        self.firstName=firstName
+        self.lastName=lastName
+        self.pay=pay
+        self.email=firstName+'.'+lastName+'@company.com'
         Employee.numberOfEmployee+=1
-    
-    def displayAnEmployee(self):
-        print "Name: ",self.name,", Salary:",self.basic_salary
 
     def displayNumberOfEmployees(self):
         print "Total Employees %d"%Employee.numberOfEmployee
+        
+    def fullname(self):
+        #return '{} {}'.format(self.firstName,self.lastName)
+        return self.firstName+' '+self.lastName
+    def apply_raise(self):
+        self.pay=int(self.pay*self.raise_amt)
 
+class Developer(Employee):#Inheritance
+    raise_saraly_by=1.07#Information Hideing
+    def __init__(self,firstName,lastName,pay,programmingLanguage):
+        super(Developer,self).__init__(firstName,lastName,pay)
+        self.programmingLanguage=programmingLanguage
 
 class Manager(Employee):
-    def getInsurance(self):
-        self.basic_salary=self.basic_salary+(1000)
-        return self.basic_salary
+    def __init__(self,firstName,lastName,pay,employees=None):
+        super(Manager,self).__init__(firstName,lastName,pay)
+        if employees is None:
+            self.employees=[]
+        else:
+            self.employees=employees
 
-class DirectorGeneral(Employee):
-    def getInsurance(self):
-        self.basic_salary=self.basic_salary+(5000)
-        return self.basic_salary
-        
-kamudi=Employee("HuKmau")
-kamudi.displayNumberOfEmployees()
-kamudi.displayAnEmployee()
+    def add_employees(self,employee):
+        if employee not in self.employees:
+            self.employees.append(employee)
+    def remove_employee(self,employee):
+        if employee in self.employees:
+            self.employees.remove(employee)
+    def employees_managed(self):
+        for emp in self.employees:
+            print ('-->',emp.firstName+' '+emp.lastName)
 
-wanja=Manager("Wanjaa")
-wanja.getInsurance()
-wanja.displayAnEmployee()
-wanja.displayNumberOfEmployees()
+emp_1=Employee('Esir','Kings',35000)
+emp_2=Employee('Sarah','Wangari',25000)
+developer_1=Developer('Mwakai','Wakesho',35000,'C++')
 
-Mwaniki=DirectorGeneral("Mwaniki")
-Mwaniki.getInsurance()
-Mwaniki.displayAnEmployee()
-Mwaniki.displayNumberOfEmployees()
+manager_1=Manager('Kimoda','Fransis',70000,[emp_1])
+manager_1.add_employees(developer_1)
+manager_1.remove_employee(emp_1)
+
+
+
+print  developer_1.fullname()+' Programming In  '+developer_1.programmingLanguage#A developer And His/her Prog Language
+
+print manager_1.fullname()+' Manager '
+
+print manager_1.employees_managed()#Employees Managed By This Manager
+
+manager_1.displayNumberOfEmployees()
+
