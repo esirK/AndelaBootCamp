@@ -1,5 +1,6 @@
 import requests
 import json
+#A simple Command Line App that Uses An open Movies Public API (http://www.omdbapi.com) to allow its users to serch for a Movie Using Movie Name And Date
 
 #url="http://www.omdbapi.com/?t=Prison+Break&y=2017&plot=full"
 #request User To Enter Movie To Search And The Year Of The Movie
