@@ -1,7 +1,7 @@
 def find_missing(A,B):
     #check if contents of list are numbers
     AandB=A+B
-    if all(isinstance(item,int) for item in AandB)and all(pos>0 for pos in AandB):    
+    if all(isinstance(item,int) for item in AandB):#and all(pos>0 for pos in AandB):    
         set1=set(A)
         set2=set(B)
 
