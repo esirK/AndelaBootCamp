@@ -18,11 +18,13 @@ if movieName and year_of_act:#Ensure User Enters Movie Name and Year
 
             res=request.json()
             #print request.status_code
-            
-            print res['Title']+"\n..............................................."
+            if (res['Response']==False):
+                print res['Response']
+                print res['Title']+"\n..............................................."
 
-            print "Description.\n"+res['Plot']+"\nYear Of Release: "+res['Year']+"\n"+"Actors\n"+res['Actors']+"\nWritten By \n"+res['Writer']
-
+                print "Description.\n"+res['Plot']+"\nYear Of Release: "+res['Year']+"\n"+"Actors\n"+res['Actors']+"\nWritten By \n"+res['Writer']
+            else:
+                print res['Error']
         else:
             print "We Only Have Movies From 1950-2017"
     else:
@@ -30,3 +32,4 @@ if movieName and year_of_act:#Ensure User Enters Movie Name and Year
 
 else:
     print "Supply The Name Of The Movie And The Year You Want to Search it From"
+
