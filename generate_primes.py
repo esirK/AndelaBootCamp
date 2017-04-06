@@ -14,4 +14,3 @@ def primes_generator(n):
     
     elif type(n)==list:
         return 'Not A prime Number'
-# primes_generator(60)
