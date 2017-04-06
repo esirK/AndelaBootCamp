@@ -1,7 +1,7 @@
 def find_missing(A,B):
     #check if contents of list are numbers
     AandB=A+B
-    if all(isinstance(item,int) for item in AandB):    
+    if all(isinstance(item,int) for item in AandB)and all(pos>0 for pos in AandB):    
         set1=set(A)
         set2=set(B)
 
@@ -24,6 +24,6 @@ def find_missing(A,B):
                 #return list(set2-set1)[0]
     
     else:
-        print "The Arrays Should Only Contain Numbers"
+        print "The Arrays Should Only Contain positive Numbers"
         #return "The Arrays Should Only Contain Numbers"
-#find_missing([], [])
+#find_missing([0,2,3,4,5], [2,3,4,5])
