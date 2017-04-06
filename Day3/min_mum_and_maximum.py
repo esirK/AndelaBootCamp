@@ -13,5 +13,6 @@ def find_max_min(L):
     if minimum==maximum:
         return [len(L)]
     else:
-        return[minimum,maximum]
+        print[minimum,maximum]
+        #return[minimum,maximum]
 #print find_max_min([4, 66, 6, 44, 7, 78, 8, 68, 2])
