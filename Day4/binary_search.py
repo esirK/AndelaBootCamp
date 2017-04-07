@@ -20,21 +20,20 @@ class BinarySearch(list):
                 break
             elif val_to_search>self[midpoint]:
                 if minimum==midpoint:
-                    solution['count']=count
+                    solution['count']=0
                     solution['index']=-1
-                    print solution
-                    return
+                    return solution
                 minimum=midpoint
             elif val_to_search<self[midpoint]:
                 maximum=midpoint
         solution['count']=count
         solution['index']=midpoint
-        print solution
+        return solution
         #return solution
         
-#a=BinarySearch(10,1)
-#a.search(6)
-#b=BinarySearch(20,2)
-#b.search(33)
+#a=BinarySearch(20,1)
+#a.search(16)
+#b=BinarySearch(20,1)
+#print b.search(16)
 #c=BinarySearch(100, 10)
-#c.search(40)
+#print c.search(10000)
