@@ -18,7 +18,7 @@ if movieName and year_of_act:#Ensure User Enters Movie Name and Year
 
             res=request.json()
             #print request.status_code
-            if (res['Response']==False):
+            if (res['Response']=="True"):
                 print res['Response']
                 print res['Title']+"\n..............................................."
 
