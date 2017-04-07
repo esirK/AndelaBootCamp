@@ -12,7 +12,7 @@ if movieName and year_of_act:#Ensure User Enters Movie Name and Year
     if year_of_act.isdigit():
         
         if (int(year_of_act)<=2017 and int(year_of_act)>=1950):
-            
+            print "Loading..................."
             payload={'t':movieName,'y':year_of_act,'plot':'full'}
             request=requests.get(url,params=payload)
 
@@ -32,4 +32,3 @@ if movieName and year_of_act:#Ensure User Enters Movie Name and Year
 
 else:
     print "Supply The Name Of The Movie And The Year You Want to Search it From"
-
